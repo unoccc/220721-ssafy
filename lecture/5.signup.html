@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" class="id" placeholder="아이디">
+    </div>
+    <input type="text" class="pw" placeholder="비밀번호">
+    <br>
+    <br>
+    <!-- type을 기입하지 않으면 submit 처럼 새로고침 발생함. -->
+    <button type="button" class="btn">회원가입하기</button>
+    
+    <script>
+        const keyupId = document.querySelector('.id');
+        const keyupPw = document.querySelector('.pw');
+
+        let idResult = null;
+        let pwResult = null;
+
+        const btn = document.querySelector('.btn');
+
+        keyupId.addEventListener("keyup", function(e){
+            idResult = e.target.value;
+        })
+        keyupPw.addEventListener("keyup", function(e){
+            pwResult = e.target.value;
+        })
+        btn.addEventListener('click', function(){
+            console.log(pwResult, idResult);
+            if (idResult !== null || pwResult !== null ){
+                alert("회원가입이 완료되었습니다.")
+            }
+            else{
+                if(idResult === null){
+                    alert("아이디가 비어있습니다");
+                }
+                
+                if(pwResult === null){
+                    alert("비밀번호가 비어있습니다");
+                }
+            }
+            idResult = null;
+            pwResult = null;
+            keyupId.value = ""
+            keyupPw.value = ""
+        })
+    </script>
+</body>
+</html>

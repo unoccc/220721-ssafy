@@ -1,0 +1,12 @@
+change : input 에서 값이 바뀔 때 발생하는 이벤트
+
+input의 값을 가져오려면
+selector 사용 -> input.value 로 가져옴 ( 값 변경도 가능 )
+select tag 사용할땐 option안에 value에 값을 줘야 읽어올 수 있음.
+
+key : 키보드 입력할때 발생하는 이벤트
+
+키보드를 눌렀을 때 발생 - keydown
+키보드를 눌렀다 뗐을 때 발생 - keyup (보통 사용)
+
+키보드 값을 가져오는건 e.target.value or e.code
